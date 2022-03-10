@@ -1,0 +1,78 @@
+{% comment %}
+If it is blank, show default message, else show exclusive product
+{% endcomment %}
+{% if section.settings.exclusive_product_title == blank %}
+<p> No featured product. Contact admin for 0.01% chance of a reply. </p>
+{% else %}
+<div class="site-wrapper">
+  <div class="exclusive-div">
+    <a class="exclusive_link" href="{{ section.settings.exclusive_product_url}}">
+      <h1 class="exclusive-header"> {{section.settings.exclusive_product_title}} </h1>
+      <img class="exclusive-img" src="{{ section.settings.exclusive_product_img | img_url: '250x250' }}">
+      <p> {{section.settings.exclusive_product_description}} </p>
+    </a>
+  </div>
+</div>
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Exclusive Product"
+  },
+  "settings": [
+    {
+      "type": "text",
+	  "id": "exclusive_product_title",
+	  "label": "Exclusive Product Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "exclusive_product_img",
+      "label": {
+        "en": "Exclusive Product IMG"
+      }
+    },
+	{
+      "type": "url",
+      "id": "exclusive_product_url",
+      "label": "Exclusive Product URL"
+	},
+    {
+      "type": "text",
+	  "id": "exclusive_product_description",
+	  "label": "Exclusive Product Description"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  /* The name of the product */
+  .exclusive-header{
+      font-size: 25px;
+      font-weight: bold;
+	  font-family: "Times New Roman";
+  }
+
+   /* The main div */
+  .exclusive-div{
+	border: 1px solid black;
+	text-align: center;
+	height: auto;
+	width: 500px;
+	padding: 5px;
+  }
+
+  
+  /* Border around the image */
+  .exclusive-img{
+	border: 1px dashed black;
+  }
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

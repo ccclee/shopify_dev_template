@@ -1,0 +1,17 @@
+{%comment this nothing button generates random number from 1 - 10 %}
+{%endcomment%}
+
+{% assign min = 1 %}
+{% assign max = 50 %}
+{% assign diff = max | minus: min %}
+
+{% assign dataNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+
+<button id="buttonOfNothing" data-attr="{{dataNumber}}"> Nothing Button V2 </button>
+
+
+<script>
+  $("#buttonOfNothing").on('click', function(){
+    alert("Your random number is: " + $(this).attr("data-attr") + ". Don't go telling admin this button does something.");
+  });
+</script>
