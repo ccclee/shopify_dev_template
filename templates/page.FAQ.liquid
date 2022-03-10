@@ -1,0 +1,42 @@
+<!-- /templates/page.liquid -->
+<h1 class="small--text-center">{{ page.title }}</h1>
+
+<!-- Custom FAQ page template -->
+<div class="rte">
+  <ol class="faq_class">
+    <li> What is this shop about? </li>
+    <p> Nothing, absolutely nothing. Ask again to increase nothing % by 0.01%. Otherwise, it's for development. </p>
+      
+    <li> Why did you create this shop? </li>
+    <p> To learn shopify. Don't tell admin about me telling you. </p>
+    
+    <li>  Can I buy anything? </li>
+    <p> Hey, I'm' sure admin told you many times but there's nothing to buy! Everything is fake. </p>
+    
+    <li>  What else can I do in this shop? </li>
+    <p> You can click this button for absolutely nothing. <button id="nothingButton">Nothing.</button> </p>
+        
+    <li>  You must hate that button if you are still reading </li>
+    <p> Fine, here is a better improved button that does something despite the name. {%include 'button_of_nothing_2' %}</p>
+      
+    <p> Oh you are still here? Try the search button for your answers {% include 'icon-search' %}. Spoiler alert: Don't expect anything</p>
+ 	
+    <li> ...... Really </li>
+    <p> I didn't provide a link didn't I on that search icon? Just click this close button to find your answer. <a href="https://cleedevtest.myshopify.com"> {%include 'icon-close' %}</a></p>
+  
+  </ol>
+</div>
+
+<style>
+  .faq_class>li{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+</style>
+
+<script>
+  $("#nothingButton").on('click', function(){
+    alert("Nothing + 1");
+  });
+</script>
